@@ -166,6 +166,7 @@ body {
 @media screen and (max-width: 700px) {
   .Container {
     color: red;
+    background: red;
     min-width: 98%;
     max-width: 98%;
     margin: 1% 0 0 1%;
