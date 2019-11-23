@@ -7,7 +7,7 @@ import Intrebari from "./Intrebari.js"
 
 let intrebari = []
 
-intrebari.push(new Intrebari("Prima22 Intrebare", ["Da", "Nu"], [true, false]))
+intrebari.push(new Intrebari("Prima Intrebare", ["Da", "Nu"], [true, false]))
 
 class Content extends React.Component {
   constructor(props) {
