@@ -1,0 +1,92 @@
+
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, button, cite, code,
+  del, dfn, em, img, input, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, 
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, section, summary,
+  time, mark, audio, video {
+    border: 0;
+    font-size: 100%;
+    box-sizing:border-box;
+    font-family:arial;
+    display:block;
+    cursor:default;
+  }
+  a {
+    text-decoration: none;
+    cursor:pointer;
+    color:white;
+  }
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html,body{
+  min-height: 100% !important;
+
+}
+
+.Container{
+	min-width:500px;
+	min-height:70vh;
+	width:50vw;
+	background:white;
+	border-radius:10px;
+	box-shadow:0px 3px 5px 2px gray;
+	margin-left:25vw;
+	margin-top:5px;
+}
+
+.Incepe{
+	border-radius:10px 10px 0 0;
+	background:rgb(19, 140, 140);
+	padding:10px;
+	width:100%;
+	color:white;
+	font-size:3.5vh;
+
+}
+
+
+.topCaseta{
+	border-radius:10px 10px 0 0;
+	background:rgb(19, 140, 140);
+	padding:10px;
+	width:100%;
+	color:white;
+	font-size:3.5vh;
+}
+.bodyCaseta{
+	font-size:3vh;
+	color:gray; 
+	user-select: none;
+}
+.raspuns{
+	padding:10px;
+}
+.raspuns:hover{
+	background:rgb(130, 243, 0);
+	color:white;
+	cursor:pointer;
+}
+
+
+@media screen and (max-width: 700px) {
+.Container{
+	margin:1% 0 0 1%;
+	width:98%;
+	min-width:0;
+
+}
+
+
+}
