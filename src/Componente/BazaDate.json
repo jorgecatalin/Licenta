@@ -1,0 +1,146 @@
+[
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon1",
+    "memorieStocare": [64, 2],
+    "valoare": [2900, 2]
+  },
+  {
+    "sistemOperare": "ios",
+    "nume": "telefon2",
+    "memorieStocare": [64, 2],
+    "valoare": [2800, 2]
+  },
+  {
+    "sistemOperare": "ios",
+    "nume": "telefon3",
+    "memorieStocare": [128, 2],
+    "valoare": [1800, 1]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon4",
+    "memorieStocare": [128, 2],
+    "valoare": [5000, 2]
+  },
+  {
+    "sistemOperare": "ios",
+    "nume": "telefon5",
+    "memorieStocare": [32, 1],
+    "valoare": [4600, 2]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon6",
+    "memorieStocare": [32, 1],
+    "valoare": [3200, 2]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon7",
+    "memorieStocare": [16, 1],
+    "valoare": [1700, 1]
+  },
+  {
+    "sistemOperare": "ios",
+    "nume": "telefon8",
+    "memorieStocare": [16, 1],
+    "valoare": [2300, 2]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon9",
+    "memorieStocare": [128, 2],
+    "valoare": [2100, 2]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon10",
+    "memorieStocare": [16, 1],
+    "valoare": [2200, 2]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon11",
+    "memorieStocare": [16, 1],
+    "valoare": [3400, 2]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon12",
+    "memorieStocare": [16, 1],
+    "valoare": [1200, 1]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon13",
+    "memorieStocare": [16, 1],
+    "valoare": [1300, 1]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon14",
+    "memorieStocare": [16, 1],
+    "valoare": [1400, 1]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon15",
+    "memorieStocare": [32, 1],
+    "valoare": [1100, 1]
+  },
+  {
+    "sistemOperare": "ios",
+    "nume": "telefon[16,1]",
+    "memorieStocare": [32, 1],
+    "valoare": [900, 1]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon17",
+    "memorieStocare": [64, 2],
+    "valoare": [2200, 2]
+  },
+  {
+    "sistemOperare": "ios",
+    "nume": "telefon18",
+    "memorieStocare": [64, 2],
+    "valoare": [800, 1]
+  },
+  {
+    "sistemOperare": "ios",
+    "nume": "telefon19",
+    "memorieStocare": [128, 2],
+    "valoare": [700, 1]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon20",
+    "memorieStocare": [128, 2],
+    "valoare": [600, 1]
+  },
+  {
+    "sistemOperare": "ios",
+    "nume": "telefon21",
+    "memorieStocare": [16, 1],
+    "valoare": [500, 1]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon22",
+    "memorieStocare": [16, 1],
+    "valoare": [400, 1]
+  },
+  {
+    "sistemOperare": "ios",
+    "nume": "telefon23",
+    "memorieStocare": [16, 1],
+    "valoare": [850, 1]
+  },
+  {
+    "sistemOperare": ["android", 1],
+    "nume": "telefon24",
+    "memorieStocare": [16, 1],
+    "valoare": [950, 1]
+  }
+]

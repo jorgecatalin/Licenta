@@ -1,0 +1,21 @@
+[
+  {
+    "textIntrebare": "Ce buget aveti?",
+    "raspunsIntrebare": ["sub 1500lei", "peste 1500lei"],
+    "raspunsConditie": [true, false],
+    "categorie": "pret"
+  },
+
+  {
+    "textIntrebare": "Doriti ca telefonul dumneavoastra sa aibe o memorie de stocare mare ?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [true, false],
+    "categorie": "memorieStocare"
+  },
+  {
+    "textIntrebare": "Ce sistem de operare doriti sa aibe telefonul?",
+    "raspunsIntrebare": ["IOS", "Android"],
+    "raspunsConditie": [true, false],
+    "categorie": "sistemOperare"
+  }
+]

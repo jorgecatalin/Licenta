@@ -1,8 +1,9 @@
 class Intrebari {
-  constructor(text, raspunsuriText, raspunsuri) {
+  constructor(text, raspunsuriText, raspunsuri, categorie) {
     this.text = text
     this.raspunsuriText = raspunsuriText
     this.raspunsuri = raspunsuri
+    this.categorie = categorie
   }
   getText = () => this.text
 
