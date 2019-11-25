@@ -7,6 +7,8 @@ class Intrebari {
   }
   getText = () => this.text
 
+  getCategorie = () => this.categorie
+
   getRaspunsuriText = val => this.raspunsuriText[val]
 
   getRaspunsuri = val => this.raspunsuri[val]
