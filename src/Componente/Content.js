@@ -1,5 +1,4 @@
 import React from "react"
-import "../index.css"
 import Intrebare from "./Intrebare.js"
 import Raspunsuri from "./Raspunsuri.js"
 import Meniu from "./Meniu.js"
@@ -10,6 +9,7 @@ let data = require("./BazaDate.json")
 let dataIntrebari = require("./BazaDateIntrebari.json")
 let telefoane = []
 let telefoaneRamase = data
+let telefoaneInapoi = []
 //console.log(date[1])
 
 let intrebari = []
@@ -32,6 +32,8 @@ class Content extends React.Component {
     this.getRaspunsCurent = this.getRaspunsCurent.bind(this)
     this.schimbaIntrebarea = this.schimbaIntrebarea.bind(this)
     this.start = this.start.bind(this)
+    this.inapoi = this.inapoi.bind(this)
+    this.arataTelefonFinal = this.arataTelefonFinal.bind(this)
     this.state = {
       i: 0,
       raspunsCurent: 4,
@@ -50,14 +52,30 @@ class Content extends React.Component {
               getRaspunsCurent: this.getRaspunsCurent
             }}
           />
-          <Meniu />
+          <Meniu
+            date={{
+              arataTelefonFinal: this.arataTelefonFinal,
+              start: this.start,
+              inapoi: this.inapoi,
+              i: this.state.i,
+              arataFinal: this.state.arataFinal
+            }}
+          />
         </div>
       )
     } else {
       return (
         <div className="Content">
           <TelefonFinal date={telefoaneRamase[0]} />
-          <Meniu />
+          <Meniu
+            date={{
+              arataTelefonFinal: this.arataTelefonFinal,
+              start: this.start,
+              inapoi: this.inapoi,
+              i: this.state.i,
+              arataFinal: this.state.arataFinal
+            }}
+          />
         </div>
       )
     }
@@ -67,12 +85,13 @@ class Content extends React.Component {
     this.setState({
       raspunsCurent: _raspuns
     })
+    telefoaneInapoi[this.state.i] = telefoaneRamase
     if (_raspuns === 1 || _raspuns === 2) {
       for (let k in telefoaneRamase) {
         let ceva = telefoaneRamase[k][intrebari[this.state.i].categorie][1]
         if (ceva === _raspuns) {
           telefoane.push(telefoaneRamase[k])
-          console.log(_raspuns, ceva)
+          //console.log(_raspuns, ceva)
         }
       }
       console.log(telefoaneRamase.length)
@@ -95,13 +114,26 @@ class Content extends React.Component {
 
   start() {
     this.setState({
-      i: 0
+      i: 0,
+      arataFinal: 0
     })
     telefoane = []
     telefoaneRamase = data
   }
 
-  arataTelefonFinal() {}
+  arataTelefonFinal() {
+    this.setState({
+      arataFinal: 1
+    })
+  }
+
+  inapoi() {
+    telefoaneRamase = telefoaneInapoi[this.state.i - 1]
+    console.log(telefoaneRamase)
+    this.setState({
+      i: this.state.i - 1
+    })
+  }
 }
 
 export default Content

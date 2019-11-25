@@ -1,5 +1,4 @@
 import React from "react"
-import "./index.css"
 import Content from "./Componente/Content.js"
 import Incepe from "./Componente/Incepe.js"
 

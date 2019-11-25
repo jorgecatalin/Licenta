@@ -1,5 +1,4 @@
 import React from "react"
-import "../index.css"
 
 class TelefonFinal extends React.Component {
   constructor(props) {
