@@ -4,6 +4,7 @@ import Raspunsuri from "./Raspunsuri.js"
 import Meniu from "./Meniu.js"
 import Intrebari from "./Intrebari.js"
 import TelefonFinal from "./TelefonFinal.js"
+import { useSpring, animated } from "react-spring/renderprops"
 
 let data = require("./BazaDate.json")
 let dataIntrebari = require("./BazaDateIntrebari.json")
@@ -43,7 +44,7 @@ class Content extends React.Component {
   render() {
     if (this.state.arataFinal === 0) {
       return (
-        <div className="Content">
+        <div className="Content" from={{ opacity: 0 }} to={{ opacity: 1 }}>
           <Intrebare text={intrebari[this.state.i].text} />
           <Raspunsuri
             date={{
