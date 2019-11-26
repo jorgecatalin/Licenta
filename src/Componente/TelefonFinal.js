@@ -8,7 +8,7 @@ class TelefonFinal extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="Raspunsuri">
         <div>Telefonul cel mai potrivit pentru dumneavoastra este:</div>
         <div>{this.props.date.nume}</div>
         <div>{this.props.date.sistemOperare[0]}</div>

@@ -5,22 +5,25 @@ class Meniu extends React.Component {
     super(props)
   }
   render() {
-    if (this.props.date.i > 0 && this.props.date.arataFinal === 0) {
-      return (
-        <div>
+    //trebuie ca macar o obtiune sa fie aleasa pentru a arata butonul Termina
+
+    return (
+      <div className="MeniuContainer">
+        {this.props.date.i != 0 ? (
           <div onClick={this.props.date.inapoi}>Inapoi</div>
-          <div onClick={this.props.date.start}>Reseteaza</div>
+        ) : (
+          ""
+        )}
+
+        <div onClick={this.props.date.start}>Reseteaza</div>
+
+        {this.props.date.i > 0 && this.props.date.arataFinal === 0 ? (
           <div onClick={this.props.date.arataTelefonFinal}>Termina</div>
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <div onClick={this.props.date.start}>Reseteaza</div>
-          <div onClick={this.props.date.arataTelefonFinal}>Termina</div>
-        </div>
-      )
-    }
+        ) : (
+          ""
+        )}
+      </div>
+    )
   }
 }
 

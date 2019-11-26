@@ -4,7 +4,7 @@ import Raspunsuri from "./Raspunsuri.js"
 import Meniu from "./Meniu.js"
 import Intrebari from "./Intrebari.js"
 import TelefonFinal from "./TelefonFinal.js"
-import { useSpring, animated } from "react-spring/renderprops"
+import { useSpring, animated } from "react-spring"
 
 let data = require("./BazaDate.json")
 let dataIntrebari = require("./BazaDateIntrebari.json")
@@ -83,6 +83,7 @@ class Content extends React.Component {
   }
 
   getRaspunsCurent(_raspuns) {
+    this.props.action()
     this.setState({
       raspunsCurent: _raspuns
     })
@@ -103,9 +104,11 @@ class Content extends React.Component {
   }
 
   schimbaIntrebarea() {
+    this.props.action()
     if (this.state.i + 1 === nrIntrebari) {
       this.setState({
-        arataFinal: 1
+        arataFinal: 1,
+        i: this.state.i + 1
       })
     } else
       this.setState({
@@ -114,6 +117,7 @@ class Content extends React.Component {
   }
 
   start() {
+    this.props.action()
     this.setState({
       i: 0,
       arataFinal: 0
@@ -123,16 +127,19 @@ class Content extends React.Component {
   }
 
   arataTelefonFinal() {
+    this.props.action()
     this.setState({
       arataFinal: 1
     })
   }
 
   inapoi() {
+    this.props.action()
     telefoaneRamase = telefoaneInapoi[this.state.i - 1]
     console.log(telefoaneRamase)
     this.setState({
-      i: this.state.i - 1
+      i: this.state.i - 1,
+      arataFinal: 0
     })
   }
 }

@@ -107,8 +107,8 @@ body {
 }
 
 .Container {
-  display: flex;
   position: realive;
+  display: flex;
   min-width: 500px;
   min-height: 70vh;
   width: 50vw;
@@ -145,6 +145,7 @@ body {
   font-size: 3.5vh;
 }
 .Content {
+  position: relative;
   width: 100%;
 }
 .Raspunsuri {
@@ -162,7 +163,19 @@ body {
   color: white;
   cursor: pointer;
 }
-
+.MeniuContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1vh;
+  display: flex;
+  align-items: right;
+  float: bottom;
+}
+.MeniuContainer div {
+  cursor: pointer;
+  margin: 1vh;
+}
 @media screen and (max-width: 700px) {
   .Container {
     min-width: 98%;
