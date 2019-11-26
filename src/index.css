@@ -129,8 +129,7 @@ body {
   font-size: 10vh;
 }
 .Incepe div:hover {
-  color: white;
-  background: gray;
+  color: rgb(31, 29, 29);
   cursor: pointer;
   padding: 5vh;
   border-radius: 2vh;
