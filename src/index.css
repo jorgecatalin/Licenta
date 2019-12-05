@@ -135,6 +135,13 @@ body {
   border-radius: 2vh;
 }
 
+.Content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
 .Intrebare {
   border-radius: 2vh 2vh 0 0;
   background: rgb(19, 140, 140);
@@ -142,20 +149,22 @@ body {
   width: 100%;
   color: white;
   font-size: 3.5vh;
-}
-.Content {
-  position: relative;
-  width: 100%;
+  display: flex;
 }
 .Raspunsuri {
-  font-size: 3vh;
+  font-size: 5vh;
   color: gray;
   user-select: none;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: auto;
 }
 .Raspunsuri div {
   padding: 10px;
   width: 100%;
+  text-align: center;
 }
 .Raspunsuri div:hover {
   background: rgb(130, 243, 0);
@@ -163,13 +172,13 @@ body {
   cursor: pointer;
 }
 .MeniuContainer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 1vh;
   display: flex;
   align-items: right;
-  float: bottom;
+  width: 100%;
+  color: white;
+  background: rgb(158, 158, 158);
+  justify-content: flex-end;
+  border-radius: 0 0 2vh 2vh;
 }
 .MeniuContainer div {
   cursor: pointer;

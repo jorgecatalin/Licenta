@@ -59,7 +59,8 @@ class Content extends React.Component {
               start: this.start,
               inapoi: this.inapoi,
               i: this.state.i,
-              arataFinal: this.state.arataFinal
+              arataFinal: this.state.arataFinal,
+              getRaspunsCurent: this.getRaspunsCurent
             }}
           />
         </div>
@@ -129,7 +130,8 @@ class Content extends React.Component {
   arataTelefonFinal() {
     this.props.action()
     this.setState({
-      arataFinal: 1
+      arataFinal: 1,
+      i: this.state.i + 1
     })
   }
 

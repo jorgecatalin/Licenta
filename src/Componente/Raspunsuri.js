@@ -13,9 +13,6 @@ class Raspunsuri extends React.Component {
         <div onClick={() => this.props.date.getRaspunsCurent(2)}>
           {this.props.date.intrebariText[1]}
         </div>
-        <div onClick={() => this.props.date.getRaspunsCurent(3)}>
-          Nu conteaza
-        </div>
       </div>
     )
   }
