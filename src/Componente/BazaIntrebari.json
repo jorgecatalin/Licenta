@@ -1,0 +1,177 @@
+[
+  {
+    "textIntrebare": "Ce buget aveti?",
+    "raspunsIntrebare": ["Sub 1500lei", "Peste 1500lei"],
+    "raspunsConditie": [1, 2],
+    "categorie": "valoareProdus",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul dumneavoastra sa aibe o memorie de stocare pentru a putea stoca multe poze,filme,jocuri?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "memorieStocare",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Ce buget aveti?",
+    "raspunsIntrebare": ["Sub 1500lei", "Peste 1500lei"],
+    "raspunsConditie": [1, 2],
+    "categorie": "valoareProdus",
+    "poza": " "
+  },
+  {
+    "textIntrebare": " ",
+    "raspunsIntrebare": [" ", " "],
+    "raspunsConditie": [1, 2],
+    "categorie": " ",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa aibe notch? ",
+    "raspunsIntrebare": [" Da", " Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "notch",
+    "poza": " https://i.kinja-img.com/gawker-media/image/upload/igeunkcc8m5clfgtldtm.jpg"
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa aibe senzor de amprente? ",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "sensorAmprente",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa prezinte camera frontala?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "cameraFrontala",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa faca poze si videoclipuri foarte bune?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "cameraBuna",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa fi aparut de cel mult un an?(sa fie nou)",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "aparutNou",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca orice aplicatiie si orice joc sa functioneze foarte bine? ",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "procesorBun",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa fie mare?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "telefonMare",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca ecranul telefonului sa fie foarte rezistent?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "ecranRezistent",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti sa aveti posibilitatea de a mai adauga memorie telefonului?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "slotMemorie",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca carcasa telefonului sa fie una rezistenta?(plastic,metal)",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "carcasaRezistenta",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa se poata incarca wireless?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "incarcareWireless",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti sa puteti folosii casti cu fir?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "castiFir",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa aibe ecran curbat?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "ecranCurbat",
+    "poza": "https://static.playtech.ro/wp-content/uploads/2014/12/Samsung-Galaxy-Note-Edge-review-Playtech-0052-1170x644.jpg"
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa prezinte lanterna cu blit in fata?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "blitFata",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa aibe o baterie mare?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "baterieMare",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa dispuna de o incarcare foarte rapida?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "incarcareRapida",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa dispuna de deplocare faciala?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "deblocareFaciala",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa aibe ecran complet fara butoane si cu margini cat mai mici?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "faraButoaneEcran",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Aveti nevoie sa folositi mai mult de o cartela sim?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "carteleSim",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca ecranul sa se vada foarte bine?(AMOLED)",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "ecranAmoled",
+    "poza": " "
+  },
+  {
+    "textIntrebare": "Doriti ca telefonul sa fie rezistent la apa?",
+    "raspunsIntrebare": ["Da", "Nu"],
+    "raspunsConditie": [1, 2],
+    "categorie": "rezistentApa",
+    "poza": " "
+  }
+]
