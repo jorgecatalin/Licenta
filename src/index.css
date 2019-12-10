@@ -199,19 +199,26 @@ body {
   cursor: pointer;
   margin: 1vh;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .Container {
     min-width: 100%;
     max-width: 100%;
-    margin: 0;
+    margin: 0 !important;
+    border-style: none;
     width: 100%;
     min-width: 0;
     height: 100vh;
+    border-radius: 0;
   }
-  .RaspunsuriDaNu:hover {
-    background: none;
+  .Container div {
+    border-radius: 0;
+  }
+  .RaspunsuriDaNu div:hover {
+    background-color: white !important;
+    color: gray;
   }
   .RaspunsuriNuConteaza:hover {
-    background: none;
+    background-color: white !important;
+    color: gray;
   }
 }
