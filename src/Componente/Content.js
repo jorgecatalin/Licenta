@@ -5,27 +5,25 @@ import Meniu from "./Meniu.js"
 import Intrebari from "./Intrebari.js"
 import TelefonFinal from "./TelefonFinal.js"
 import { useSpring, animated } from "react-spring"
+import { thisTypeAnnotation } from "@babel/types"
 
-let data = require("./BazaDate.json")
-let dataIntrebari = require("./BazaDateIntrebari.json")
+const data = require("./BazaDDate.json")
+const dataIntrebari = require("./BazaIntrebari.json")
 let telefoane = []
-let telefoaneRamase = data
+let telefoaneRamase = [...data]
 let telefoaneInapoi = []
 //console.log(date[1])
 
-let intrebari = []
-for (const i in dataIntrebari) {
-  intrebari.push(
-    new Intrebari(
-      dataIntrebari[i].textIntrebare,
-      dataIntrebari[i].raspunsIntrebare,
-      dataIntrebari[i].raspunsConditie,
-      dataIntrebari[i].categorie
-    )
-  )
-}
+const intrebari = dataIntrebari
+
+let intrebariPuse = [],
+  intrebariRamase = [],
+  intrebariCareNuMergPuse = []
+intrebariRamase = [...intrebari]
+intrebariRamase.shift()
+intrebariPuse.push(intrebari[0])
+
 const nrIntrebari = intrebari.length
-console.log(nrIntrebari)
 
 class Content extends React.Component {
   constructor(props) {
@@ -45,11 +43,11 @@ class Content extends React.Component {
     if (this.state.arataFinal === 0) {
       return (
         <div className="Content" from={{ opacity: 0 }} to={{ opacity: 1 }}>
-          <Intrebare text={intrebari[this.state.i].text} />
+          <Intrebare text={intrebariPuse[this.state.i].textIntrebare} />
           <Raspunsuri
             date={{
-              intrebariText: intrebari[this.state.i].raspunsuriText,
-              raspunsuri: intrebari[this.state.i].raspunsuri,
+              intrebariText: intrebariPuse[this.state.i].raspunsIntrebare,
+              raspunsuri: intrebariPuse[this.state.i].raspunsConditie,
               getRaspunsCurent: this.getRaspunsCurent
             }}
           />
@@ -82,6 +80,15 @@ class Content extends React.Component {
       )
     }
   }
+  sePoatePuneIntrebare(intrebareCurenta) {
+    let raspA = 0,
+      raspB = 0
+    for (let x in telefoaneRamase) {
+      if (telefoaneRamase[x][intrebareCurenta.categorie] === 1) raspA += 1
+      else raspB += 1
+    }
+    return [raspA, raspB]
+  }
 
   getRaspunsCurent(_raspuns) {
     this.props.action()
@@ -91,13 +98,16 @@ class Content extends React.Component {
     telefoaneInapoi[this.state.i] = telefoaneRamase
     if (_raspuns === 1 || _raspuns === 2) {
       for (let k in telefoaneRamase) {
-        let ceva = telefoaneRamase[k][intrebari[this.state.i].categorie][1]
-        if (ceva === _raspuns) {
+        let ceva = telefoaneRamase[k][intrebariPuse[this.state.i].categorie]
+        console.log("CCEVAAAA :::::;", ceva)
+        if (ceva == _raspuns) {
           telefoane.push(telefoaneRamase[k])
           //console.log(_raspuns, ceva)
         }
       }
-      console.log(telefoaneRamase.length)
+      if (telefoaneRamase.length == 0) console.log(telefoaneRamase)
+      console.log("Numarul telefoanelor ramase", telefoaneRamase.length)
+
       telefoaneRamase = telefoane
       telefoane = []
     }
@@ -105,16 +115,53 @@ class Content extends React.Component {
   }
 
   schimbaIntrebarea() {
+    //let XX = this.sePoatePuneIntrebare(intrebari[this.state.i])
+    //console.log("Se poate pune Intrebare: ", XX[1], XX[0])
     this.props.action()
-    if (this.state.i + 1 === nrIntrebari) {
+
+    let medie = 99999,
+      medieNoua,
+      intrebareaUrmatoare = null,
+      x
+
+    if (intrebariRamase.length === 0) {
       this.setState({
-        arataFinal: 1,
-        i: this.state.i + 1
+        arataFinal: 1
       })
-    } else
-      this.setState({
-        i: this.state.i + 1
-      })
+    } else {
+      if (intrebariRamase.length > 0)
+        for (let k in intrebariRamase) {
+          let ceva = this.sePoatePuneIntrebare(intrebariRamase[k])
+          if (ceva[0] === 0 || ceva[1] === 0) {
+            intrebariCareNuMergPuse.push(intrebariRamase[k])
+            intrebariRamase.splice(k, 1)
+            k--
+          } else {
+            if (ceva[0] >= ceva[1]) {
+              medieNoua = ceva[0] - ceva[1]
+            } else {
+              medieNoua = ceva[1] - ceva[0]
+            }
+            if (medieNoua <= medie) {
+              intrebareaUrmatoare = intrebariRamase[k]
+              medie = medieNoua
+              x = k
+            }
+          }
+        }
+      if (intrebareaUrmatoare !== null) {
+        intrebariPuse.push(intrebareaUrmatoare)
+        intrebariRamase.splice(x, 1)
+      } else {
+        this.setState({
+          arataFinal: 1
+        })
+      }
+    }
+
+    this.setState({
+      i: this.state.i + 1
+    })
   }
 
   start() {
@@ -125,6 +172,12 @@ class Content extends React.Component {
     })
     telefoane = []
     telefoaneRamase = data
+    intrebariPuse = []
+    intrebariPuse.push(intrebari[0])
+    intrebariRamase = [...intrebari]
+    intrebariRamase.shift()
+    intrebariCareNuMergPuse = []
+    console.log("Numarul de intrebari", intrebari.length)
   }
 
   arataTelefonFinal() {
@@ -137,8 +190,25 @@ class Content extends React.Component {
 
   inapoi() {
     this.props.action()
-    telefoaneRamase = telefoaneInapoi[this.state.i - 1]
-    console.log(telefoaneRamase)
+
+    intrebariRamase.concat(intrebariCareNuMergPuse)
+
+    console.log("i return: ", this.state.i)
+    console.log("Nr intrebari return: ", intrebariPuse.length)
+    console.log("intrebarile Puse", intrebariPuse)
+    if (this.state.arataFinal === 1) {
+      telefoaneRamase = telefoaneInapoi[this.state.i - 1]
+      console.log("ccccccccccccccccccc")
+    } else {
+      telefoaneRamase = telefoaneInapoi[this.state.i - 1]
+      intrebariRamase.push(intrebariPuse[this.state.i])
+      intrebariPuse.pop()
+    }
+
+    console.log("i return: ", this.state.i)
+    console.log("Nr intrebari return: ", intrebariPuse.length)
+    console.log("intrebarile Puse", intrebariPuse)
+
     this.setState({
       i: this.state.i - 1,
       arataFinal: 0

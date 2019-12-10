@@ -199,6 +199,23 @@ body {
   cursor: pointer;
   margin: 1vh;
 }
+.TelefonFinal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.TelefonFinal img {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  object-fit: cover;
+}
+.TelefonFinalNume {
+  padding: 2vh;
+  font-size: 3vh;
+  color: gray;
+}
 @media screen and (max-width: 800px) {
   .Container {
     min-width: 100%;

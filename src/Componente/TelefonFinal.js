@@ -8,12 +8,12 @@ class TelefonFinal extends React.Component {
 
   render() {
     return (
-      <div className="Raspunsuri">
-        <div>Telefonul cel mai potrivit pentru dumneavoastra este:</div>
-        <div>{this.props.date.nume}</div>
-        <div>{this.props.date.sistemOperare[0]}</div>
-        <div>{this.props.date.memorieStocare[0]}</div>
-        <div>{this.props.date.valoare[0]}</div>
+      <div className="TelefonFinal">
+        <div className="Intrebare">
+          Telefonul cel mai potrivit pentru dumneavoastra este:
+        </div>
+        <div className="TelefonFinalNume">{this.props.date.descriere.nume}</div>
+        <img src={this.props.date.descriere.poza} />
       </div>
     )
   }
