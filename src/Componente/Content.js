@@ -14,7 +14,7 @@ let telefoaneRamase = [...data]
 let telefoaneInapoi = []
 //console.log(date[1])
 
-const intrebari = dataIntrebari
+const intrebari = [...dataIntrebari]
 
 let intrebariPuse = [],
   intrebariRamase = [],
@@ -95,7 +95,7 @@ class Content extends React.Component {
     this.setState({
       raspunsCurent: _raspuns
     })
-    telefoaneInapoi[this.state.i] = telefoaneRamase
+    telefoaneInapoi[this.state.i] = [...telefoaneRamase]
     if (_raspuns === 1 || _raspuns === 2) {
       for (let k in telefoaneRamase) {
         let ceva = telefoaneRamase[k][intrebariPuse[this.state.i].categorie]
@@ -171,7 +171,7 @@ class Content extends React.Component {
       arataFinal: 0
     })
     telefoane = []
-    telefoaneRamase = data
+    telefoaneRamase = [...data]
     intrebariPuse = []
     intrebariPuse.push(intrebari[0])
     intrebariRamase = [...intrebari]
@@ -197,10 +197,10 @@ class Content extends React.Component {
     console.log("Nr intrebari return: ", intrebariPuse.length)
     console.log("intrebarile Puse", intrebariPuse)
     if (this.state.arataFinal === 1) {
-      telefoaneRamase = telefoaneInapoi[this.state.i - 1]
+      telefoaneRamase = [...telefoaneInapoi[this.state.i - 1]]
       console.log("ccccccccccccccccccc")
     } else {
-      telefoaneRamase = telefoaneInapoi[this.state.i - 1]
+      telefoaneRamase = [...telefoaneInapoi[this.state.i - 1]]
       intrebariRamase.push(intrebariPuse[this.state.i])
       intrebariPuse.pop()
     }
