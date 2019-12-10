@@ -157,16 +157,31 @@ body {
   user-select: none;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-end;
   margin-top: auto;
 }
-.Raspunsuri div {
-  padding: 10px;
+.RaspunsuriDaNu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.RaspunsuriDaNu div {
+  padding: 20px;
   width: 100%;
   text-align: center;
 }
-.Raspunsuri div:hover {
+.RaspunsuriDaNu div:hover {
+  background: rgb(130, 243, 0);
+  color: white;
+  cursor: pointer;
+}
+.RaspunsuriNuConteaza {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+.RaspunsuriNuConteaza:hover {
   background: rgb(130, 243, 0);
   color: white;
   cursor: pointer;
@@ -186,10 +201,17 @@ body {
 }
 @media screen and (max-width: 700px) {
   .Container {
-    min-width: 98%;
-    max-width: 98%;
-    margin: 1% 0 0 1%;
-    width: 98%;
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
     min-width: 0;
+    height: 100vh;
+  }
+  .RaspunsuriDaNu:hover {
+    background: none;
+  }
+  .RaspunsuriNuConteaza:hover {
+    background: none;
   }
 }

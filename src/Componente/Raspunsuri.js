@@ -7,11 +7,19 @@ class Raspunsuri extends React.Component {
   render() {
     return (
       <div className="Raspunsuri">
-        <div onClick={() => this.props.date.getRaspunsCurent(1)}>
-          {this.props.date.intrebariText[0]}
+        <div className="RaspunsuriDaNu">
+          <div onClick={() => this.props.date.getRaspunsCurent(1)}>
+            {this.props.date.intrebariText[0]}
+          </div>
+          <div onClick={() => this.props.date.getRaspunsCurent(2)}>
+            {this.props.date.intrebariText[1]}
+          </div>
         </div>
-        <div onClick={() => this.props.date.getRaspunsCurent(2)}>
-          {this.props.date.intrebariText[1]}
+        <div
+          className="RaspunsuriNuConteaza"
+          onClick={() => this.props.date.getRaspunsCurent(3)}
+        >
+          NU CONTEAZA
         </div>
       </div>
     )

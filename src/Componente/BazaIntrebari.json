@@ -1,9 +1,9 @@
 [
   {
-    "textIntrebare": "Ce buget aveti?",
-    "raspunsIntrebare": ["Sub 1500lei", "Peste 1500lei"],
+    "textIntrebare": " ",
+    "raspunsIntrebare": [" ", " "],
     "raspunsConditie": [1, 2],
-    "categorie": "valoareProdus",
+    "categorie": " ",
     "poza": " "
   },
   {
@@ -21,13 +21,6 @@
     "poza": " "
   },
   {
-    "textIntrebare": " ",
-    "raspunsIntrebare": [" ", " "],
-    "raspunsConditie": [1, 2],
-    "categorie": " ",
-    "poza": " "
-  },
-  {
     "textIntrebare": "Doriti ca telefonul sa aibe notch? ",
     "raspunsIntrebare": [" Da", " Nu"],
     "raspunsConditie": [1, 2],
@@ -38,7 +31,7 @@
     "textIntrebare": "Doriti ca telefonul sa aibe senzor de amprente? ",
     "raspunsIntrebare": ["Da", "Nu"],
     "raspunsConditie": [1, 2],
-    "categorie": "sensorAmprente",
+    "categorie": "senzorAmprente",
     "poza": " "
   },
   {
@@ -67,13 +60,6 @@
     "raspunsIntrebare": ["Da", "Nu"],
     "raspunsConditie": [1, 2],
     "categorie": "procesorBun",
-    "poza": " "
-  },
-  {
-    "textIntrebare": "Doriti ca telefonul sa fie mare?",
-    "raspunsIntrebare": ["Da", "Nu"],
-    "raspunsConditie": [1, 2],
-    "categorie": "telefonMare",
     "poza": " "
   },
   {
@@ -119,10 +105,10 @@
     "poza": "https://static.playtech.ro/wp-content/uploads/2014/12/Samsung-Galaxy-Note-Edge-review-Playtech-0052-1170x644.jpg"
   },
   {
-    "textIntrebare": "Doriti ca telefonul sa prezinte lanterna cu blit in fata?",
+    "textIntrebare": "Doriti ca telefonul sa prezinte lanterna/blit ?",
     "raspunsIntrebare": ["Da", "Nu"],
     "raspunsConditie": [1, 2],
-    "categorie": "blitFata",
+    "categorie": "blit",
     "poza": " "
   },
   {
