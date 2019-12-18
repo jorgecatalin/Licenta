@@ -7,7 +7,7 @@
     "poza": " "
   },
   {
-    "textIntrebare": "Doriti ca telefonul dumneavoastra sa aibe o memorie de stocare pentru a putea stoca multe poze,filme,jocuri?",
+    "textIntrebare": "Doriti ca telefonul dumneavoastra sa aibe o memorie de stocare mare pentru a putea stoca multe poze,filme,jocuri?",
     "raspunsIntrebare": ["Da", "Nu"],
     "raspunsConditie": [1, 2],
     "categorie": "memorieStocare",
