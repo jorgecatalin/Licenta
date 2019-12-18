@@ -7,13 +7,6 @@
     "poza": " "
   },
   {
-    "textIntrebare": "Aveti un buget mic? (sub 2000 lei)",
-    "raspunsIntrebare": ["Da", "Nu"],
-    "raspunsConditie": [1, 2],
-    "categorie": "valoareProdus",
-    "poza": " "
-  },
-  {
     "textIntrebare": "Doriti ca telefonul dumneavoastra sa aibe o memorie de stocare pentru a putea stoca multe poze,filme,jocuri?",
     "raspunsIntrebare": ["Da", "Nu"],
     "raspunsConditie": [1, 2],
@@ -25,7 +18,7 @@
     "raspunsIntrebare": [" Da", " Nu"],
     "raspunsConditie": [1, 2],
     "categorie": "notch",
-    "poza": " https://i.kinja-img.com/gawker-media/image/upload/igeunkcc8m5clfgtldtm.jpg"
+    "poza": "https://i.kinja-img.com/gawker-media/image/upload/igeunkcc8m5clfgtldtm.jpg"
   },
   {
     "textIntrebare": "Doriti ca telefonul sa aibe senzor de amprente? ",

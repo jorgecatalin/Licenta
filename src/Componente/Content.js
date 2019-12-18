@@ -99,7 +99,6 @@ class Content extends React.Component {
     if (_raspuns === 1 || _raspuns === 2) {
       for (let k in telefoaneRamase) {
         let ceva = telefoaneRamase[k][intrebariPuse[this.state.i].categorie]
-        console.log("CCEVAAAA :::::;", ceva)
         if (ceva == _raspuns) {
           telefoane.push(telefoaneRamase[k])
           //console.log(_raspuns, ceva)
@@ -186,6 +185,7 @@ class Content extends React.Component {
       arataFinal: 1,
       i: this.state.i + 1
     })
+    console.log(intrebariCareNuMergPuse)
   }
 
   inapoi() {
@@ -193,21 +193,13 @@ class Content extends React.Component {
 
     intrebariRamase.concat(intrebariCareNuMergPuse)
 
-    console.log("i return: ", this.state.i)
-    console.log("Nr intrebari return: ", intrebariPuse.length)
-    console.log("intrebarile Puse", intrebariPuse)
     if (this.state.arataFinal === 1) {
       telefoaneRamase = [...telefoaneInapoi[this.state.i - 1]]
-      console.log("ccccccccccccccccccc")
     } else {
       telefoaneRamase = [...telefoaneInapoi[this.state.i - 1]]
       intrebariRamase.push(intrebariPuse[this.state.i])
       intrebariPuse.pop()
     }
-
-    console.log("i return: ", this.state.i)
-    console.log("Nr intrebari return: ", intrebariPuse.length)
-    console.log("intrebarile Puse", intrebariPuse)
 
     this.setState({
       i: this.state.i - 1,

@@ -251,5 +251,6 @@ body {
   .MeniuContainer {
     position: absolute;
     bottom: 0;
+    font-size: 4vh;
   }
 }
