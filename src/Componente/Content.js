@@ -135,6 +135,8 @@ class Content extends React.Component {
       telefoane = []
       this.executaFunctii()
     }
+
+    //adaug notificari
     if (_raspuns === 1)
       notificareIntrebare.push({
         text: intrebariPuse[this.state.i].textIntrebare,
@@ -218,6 +220,11 @@ class Content extends React.Component {
     intrebariRamase.shift()
     intrebariCareNuMergPuse = []
     this.executaFunctii()
+    //sterg notificari
+    notificareIntrebare = []
+    this.setState({
+      notificariIntrebare: [...notificareIntrebare]
+    })
     console.log("Numarul de intrebari", intrebari.length)
   }
 
@@ -234,13 +241,22 @@ class Content extends React.Component {
     intrebariRamase.concat(intrebariCareNuMergPuse)
 
     if (this.state.arataFinal === 1) {
-      telefoaneRamase = [...telefoaneInapoi[this.state.i - 1]]
+      console.log("telefoane inappoi", telefoaneInapoi, this.state)
+      telefoaneRamase = [...telefoaneInapoi[this.state.i - 2]]
     } else {
+      console.log("telefoane inappoi", telefoaneInapoi, this.state)
       telefoaneRamase = [...telefoaneInapoi[this.state.i - 1]]
       intrebariRamase.push(intrebariPuse[this.state.i])
       intrebariPuse.pop()
     }
 
+    //sterg ultima notificare
+    if (!this.state.arataFinal) {
+      notificareIntrebare.pop()
+      this.setState({
+        notificariIntrebare: [...notificareIntrebare]
+      })
+    }
     this.setState({
       i: this.state.i - 1,
       arataFinal: 0
