@@ -21,32 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {this.state.sw ? (
-          <Spring
-            from={{ opacity: 0, marginTop: "-50vh" }}
-            to={{ opacity: 1, marginTop: "2vh" }}
-            config={{ mass: 1, tension: 200, friction: 15 }}
-          >
-            {props => (
-              <animated.div style={props} className="Container">
-                <Incepe action={this.handleSw} />
-              </animated.div>
-            )}
-          </Spring>
-        ) : (
-          <Spring
-            from={{ opacity: 0, marginTop: "-50vh" }}
-            to={{ opacity: 1, marginTop: "2vh" }}
-            config={{ mass: 1, tension: 200, friction: 15 }}
-            reset={this.state.resetT}
-          >
-            {props => (
-              <animated.div style={props} className="Container">
-                <Content action={this.resetTransition} />
-              </animated.div>
-            )}
-          </Spring>
-        )}
+        {this.state.sw ? <Incepe action={this.handleSw} /> : <Content />}
       </div>
     )
   }

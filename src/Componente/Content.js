@@ -4,6 +4,8 @@ import Raspunsuri from "./Raspunsuri.js"
 import Meniu from "./Meniu.js"
 import Intrebari from "./Intrebari.js"
 import TelefonFinal from "./TelefonFinal.js"
+import TelefoaneAfisaj from "./TelefoaneAfisaj.js"
+import NotificareIntrebari from "./NotificareIntrebari.js"
 import { useSpring, animated } from "react-spring"
 import { thisTypeAnnotation } from "@babel/types"
 
@@ -25,6 +27,8 @@ intrebariPuse.push(intrebari[0])
 
 const nrIntrebari = intrebari.length
 
+let notificareIntrebare = []
+
 class Content extends React.Component {
   constructor(props) {
     super(props)
@@ -36,31 +40,45 @@ class Content extends React.Component {
     this.state = {
       i: 0,
       raspunsCurent: 4,
-      arataFinal: 0
+      arataFinal: 0,
+      telefoaneRamaseState: [...telefoaneRamase],
+      notificariIntrebare: []
     }
   }
   render() {
     if (this.state.arataFinal === 0) {
       return (
-        <div className="Content" from={{ opacity: 0 }} to={{ opacity: 1 }}>
-          <Intrebare text={intrebariPuse[this.state.i].textIntrebare} />
-          <Raspunsuri
-            date={{
-              intrebariText: intrebariPuse[this.state.i].raspunsIntrebare,
-              raspunsuri: intrebariPuse[this.state.i].raspunsConditie,
-              getRaspunsCurent: this.getRaspunsCurent
-            }}
-          />
-          <Meniu
-            date={{
-              arataTelefonFinal: this.arataTelefonFinal,
-              start: this.start,
-              inapoi: this.inapoi,
-              i: this.state.i,
-              arataFinal: this.state.arataFinal,
-              getRaspunsCurent: this.getRaspunsCurent
-            }}
-          />
+        <div class="ContainerContent">
+          <div class="ContentStanga">
+            {this.state.notificariIntrebare.map(item => (
+              <NotificareIntrebari date={item} />
+            ))}
+          </div>
+          <div className="Content" from={{ opacity: 0 }} to={{ opacity: 1 }}>
+            <Intrebare text={intrebariPuse[this.state.i].textIntrebare} />
+            <Raspunsuri
+              date={{
+                intrebariText: intrebariPuse[this.state.i].raspunsIntrebare,
+                raspunsuri: intrebariPuse[this.state.i].raspunsConditie,
+                getRaspunsCurent: this.getRaspunsCurent
+              }}
+            />
+            <Meniu
+              date={{
+                arataTelefonFinal: this.arataTelefonFinal,
+                start: this.start,
+                inapoi: this.inapoi,
+                i: this.state.i,
+                arataFinal: this.state.arataFinal,
+                getRaspunsCurent: this.getRaspunsCurent
+              }}
+            />
+          </div>
+          <div class="ContentDreapta">
+            {this.state.telefoaneRamaseState.map(item => (
+              <TelefoaneAfisaj date={item} />
+            ))}
+          </div>
         </div>
       )
     } else {
@@ -80,6 +98,13 @@ class Content extends React.Component {
       )
     }
   }
+
+  executaFunctii() {
+    this.setState({
+      telefoaneRamaseState: [...telefoaneRamase]
+    })
+  }
+
   sePoatePuneIntrebare(intrebareCurenta) {
     let raspA = 0,
       raspB = 0
@@ -91,7 +116,6 @@ class Content extends React.Component {
   }
 
   getRaspunsCurent(_raspuns) {
-    this.props.action()
     this.setState({
       raspunsCurent: _raspuns
     })
@@ -107,16 +131,34 @@ class Content extends React.Component {
       if (telefoaneRamase.length == 0) console.log(telefoaneRamase)
       console.log("Numarul telefoanelor ramase", telefoaneRamase.length)
 
-      telefoaneRamase = telefoane
+      telefoaneRamase = [...telefoane]
       telefoane = []
+      this.executaFunctii()
     }
+    if (_raspuns === 1)
+      notificareIntrebare.push({
+        text: intrebariPuse[this.state.i].textIntrebare,
+        culoare: "green"
+      })
+    else if (_raspuns === 2)
+      notificareIntrebare.push({
+        text: intrebariPuse[this.state.i].textIntrebare,
+        culoare: "red"
+      })
+    else
+      notificareIntrebare.push({
+        text: intrebariPuse[this.state.i].textIntrebare,
+        culoare: "gray"
+      })
+    this.setState({
+      notificariIntrebare: [...notificareIntrebare]
+    })
     this.schimbaIntrebarea()
   }
 
   schimbaIntrebarea() {
     //let XX = this.sePoatePuneIntrebare(intrebari[this.state.i])
     //console.log("Se poate pune Intrebare: ", XX[1], XX[0])
-    this.props.action()
 
     let medie = 99999,
       medieNoua,
@@ -164,7 +206,6 @@ class Content extends React.Component {
   }
 
   start() {
-    this.props.action()
     this.setState({
       i: 0,
       arataFinal: 0
@@ -176,11 +217,12 @@ class Content extends React.Component {
     intrebariRamase = [...intrebari]
     intrebariRamase.shift()
     intrebariCareNuMergPuse = []
+    this.executaFunctii()
     console.log("Numarul de intrebari", intrebari.length)
   }
 
   arataTelefonFinal() {
-    this.props.action()
+    this.executaFunctii()
     this.setState({
       arataFinal: 1,
       i: this.state.i + 1
@@ -189,8 +231,6 @@ class Content extends React.Component {
   }
 
   inapoi() {
-    this.props.action()
-
     intrebariRamase.concat(intrebariCareNuMergPuse)
 
     if (this.state.arataFinal === 1) {
@@ -205,6 +245,8 @@ class Content extends React.Component {
       i: this.state.i - 1,
       arataFinal: 0
     })
+
+    this.executaFunctii()
   }
 }
 
