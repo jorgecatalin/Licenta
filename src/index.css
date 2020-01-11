@@ -143,6 +143,7 @@ body {
   background: #45a29e;
   border-radius: 2vh;
   margin-bottom: 5vh;
+  box-shadow: 0px 0px 10px 0px #333;
 }
 
 .ContentStanga {
@@ -167,6 +168,7 @@ body {
   width: 90%;
   height: 100%;
   overflow: hidden;
+  box-shadow: 5px 0 10px -5px #333;
 }
 .ContentStangaLista {
   position: relative;
@@ -184,6 +186,7 @@ body {
   overflow: hidden;
   background: #1f2833;
   margin-left: 10%;
+  box-shadow: -5px 0 10px -5px #333;
 }
 .ContentDreaptaLista {
   width: 100%;
@@ -245,6 +248,7 @@ body {
   cursor: pointer;
   font-weight: 700;
   border-radius: 10px;
+  box-shadow: 0 5px 5px -5px #333;
 }
 .RaspunsuriDa:hover {
   background: rgb(108, 202, 0);
@@ -261,6 +265,7 @@ body {
   background: hsl(0, 100%, 43%);
 }
 .RaspunsuriNuConteaza {
+  box-shadow: 0 5px 5px -5px #333;
   padding: 20px;
   width: 90%;
   text-align: center;
@@ -305,27 +310,37 @@ body {
 }
 .TelefonFinal {
   position: relative;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  min-width: 30vw;
+  height: 87vh;
+  width: 30vw;
+  background: #45a29e;
+  border-radius: 2vh;
+  margin-bottom: 5vh;
+  box-shadow: 0px 0px 10px 0px #333;
+  margin-left: 35vw;
+  overflow: hidden;
 }
 .TelefonFinal img {
-  width: 50%;
+  width: 90%;
+  height: 100%;
+  padding: 5%;
   object-fit: cover;
   margin: auto;
 }
 .TelefonFinalNume {
   padding: 2vh;
   font-size: 3vh;
-  color: gray;
+  color: white;
   margin-top: auto;
+  font-weight: 700;
 }
 .TextFinal {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  margin-top: auto;
 }
 .telefonAfisaj {
   position: relative;

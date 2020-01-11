@@ -95,8 +95,12 @@ class Content extends React.Component {
       )
     } else {
       return (
-        <div className="Content">
-          <TelefonFinal date={telefoaneRamase[0]} />
+        <div class="ContainerTot">
+          <div class="ContainerContent">
+            <div className="TelefonFInal">
+              <TelefonFinal date={telefoaneRamase[0]} />
+            </div>
+          </div>{" "}
           <Meniu
             date={{
               arataTelefonFinal: this.arataTelefonFinal,
