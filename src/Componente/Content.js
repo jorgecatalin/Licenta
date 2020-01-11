@@ -48,37 +48,49 @@ class Content extends React.Component {
   render() {
     if (this.state.arataFinal === 0) {
       return (
-        <div class="ContainerContent">
-          <div class="ContentStanga">
-            {this.state.notificariIntrebare.map(item => (
-              <NotificareIntrebari date={item} />
-            ))}
+        <div class="ContainerTot">
+          <div class="ContainerContent">
+            <div class="ContentStanga">
+              <div class="ContentStangaFixed">
+                <div class="ContentStangaHeader">Istoric intrebari</div>
+                <div class="ContentStangaLista">
+                  {this.state.notificariIntrebare.map(item => (
+                    <NotificareIntrebari date={item} />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="Content" from={{ opacity: 0 }} to={{ opacity: 1 }}>
+              <Intrebare text={intrebariPuse[this.state.i].textIntrebare} />
+              <Raspunsuri
+                date={{
+                  intrebariText: intrebariPuse[this.state.i].raspunsIntrebare,
+                  raspunsuri: intrebariPuse[this.state.i].raspunsConditie,
+                  getRaspunsCurent: this.getRaspunsCurent
+                }}
+              />
+            </div>
+            <div class="ContentDreapta">
+              <div class="ContentDreaptaFixed">
+                <div class="ContentStangaHeader">Telefoane posibile</div>
+                <div class="ContentDreaptaLista">
+                  {this.state.telefoaneRamaseState.map(item => (
+                    <TelefoaneAfisaj date={item} />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="Content" from={{ opacity: 0 }} to={{ opacity: 1 }}>
-            <Intrebare text={intrebariPuse[this.state.i].textIntrebare} />
-            <Raspunsuri
-              date={{
-                intrebariText: intrebariPuse[this.state.i].raspunsIntrebare,
-                raspunsuri: intrebariPuse[this.state.i].raspunsConditie,
-                getRaspunsCurent: this.getRaspunsCurent
-              }}
-            />
-            <Meniu
-              date={{
-                arataTelefonFinal: this.arataTelefonFinal,
-                start: this.start,
-                inapoi: this.inapoi,
-                i: this.state.i,
-                arataFinal: this.state.arataFinal,
-                getRaspunsCurent: this.getRaspunsCurent
-              }}
-            />
-          </div>
-          <div class="ContentDreapta">
-            {this.state.telefoaneRamaseState.map(item => (
-              <TelefoaneAfisaj date={item} />
-            ))}
-          </div>
+          <Meniu
+            date={{
+              arataTelefonFinal: this.arataTelefonFinal,
+              start: this.start,
+              inapoi: this.inapoi,
+              i: this.state.i,
+              arataFinal: this.state.arataFinal,
+              getRaspunsCurent: this.getRaspunsCurent
+            }}
+          />
         </div>
       )
     } else {
@@ -140,12 +152,12 @@ class Content extends React.Component {
     if (_raspuns === 1)
       notificareIntrebare.push({
         text: intrebariPuse[this.state.i].textIntrebare,
-        culoare: "green"
+        culoare: "rgb(130, 243, 0)"
       })
     else if (_raspuns === 2)
       notificareIntrebare.push({
         text: intrebariPuse[this.state.i].textIntrebare,
-        culoare: "red"
+        culoare: "#f70002"
       })
     else
       notificareIntrebare.push({

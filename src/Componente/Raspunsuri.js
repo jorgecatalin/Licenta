@@ -8,10 +8,16 @@ class Raspunsuri extends React.Component {
     return (
       <div className="Raspunsuri">
         <div className="RaspunsuriDaNu">
-          <div onClick={() => this.props.date.getRaspunsCurent(1)}>
+          <div
+            className="RaspunsuriDa"
+            onClick={() => this.props.date.getRaspunsCurent(1)}
+          >
             {this.props.date.intrebariText[0]}
           </div>
-          <div onClick={() => this.props.date.getRaspunsCurent(2)}>
+          <div
+            className="RaspunsuriNu"
+            onClick={() => this.props.date.getRaspunsCurent(2)}
+          >
             {this.props.date.intrebariText[1]}
           </div>
         </div>

@@ -10,23 +10,29 @@ class Meniu extends React.Component {
     return (
       <div className="MeniuContainer">
         {this.props.date.i != 0 ? (
-          <div onClick={this.props.date.inapoi}>Inapoi</div>
+          <div onClick={this.props.date.inapoi}>
+            <img src={require("../MeniuIcons/inapoi.png")}></img>
+          </div>
         ) : (
           ""
         )}
 
         {this.props.date.arataFinal === 0 ? (
           <div onClick={() => this.props.date.getRaspunsCurent(3)}>
-            Nu conteaza
+            <img src={require("../MeniuIcons/inainte.png")}></img>
           </div>
         ) : (
           ""
         )}
 
-        <div onClick={this.props.date.start}>Reseteaza</div>
+        <div onClick={this.props.date.start}>
+          <img src={require("../MeniuIcons/reseteaza.png")}></img>
+        </div>
 
         {this.props.date.i > 0 && this.props.date.arataFinal === 0 ? (
-          <div onClick={this.props.date.arataTelefonFinal}>Termina</div>
+          <div onClick={this.props.date.arataTelefonFinal}>
+            <img src={require("../MeniuIcons/termina.png")}></img>
+          </div>
         ) : (
           ""
         )}

@@ -5,7 +5,12 @@ class Intrebare extends React.Component {
     super(props)
   }
   render() {
-    return <div className="Intrebare">{this.props.text}</div>
+    return (
+      //<div class="IntrebareContainer">
+      // <div class="ContentStangaHeader">Intrebare</div>
+      <div className="Intrebare">{this.props.text}</div>
+      // </div>
+    )
   }
 }
 

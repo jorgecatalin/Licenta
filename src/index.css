@@ -106,34 +106,31 @@ body {
   min-height: 100% !important;
 }
 
+.colorScheme {
+  background: #0b0c10;
+
+  background: #1f2833;
+
+  background: #c5c6c7;
+
+  background: #66fcf1;
+
+  background: #45a29e;
+}
+.ContainerTot {
+  width: 100wh;
+  height: 100vh;
+  overflow: hidden;
+}
 .ContainerContent {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  height: 100vh;
+  height: 93vh;
   margin: 0;
   border: 0;
-  background: rgb(31, 29, 29);
+  background: #c5c6c7;
   overflow: none;
-}
-.ContentStanga {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 35vw;
-  direction: rtl;
-  background: rgb(0, 22, 40);
-}
-.ContentDreapta {
-  display: flex;
-  width: 35vw;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background: rgb(0, 22, 40);
 }
 .Content {
   position: relative;
@@ -143,8 +140,59 @@ body {
   min-width: 30vw;
   min-height: 70vh;
   width: 30vw;
-  background: white;
+  background: #45a29e;
   border-radius: 2vh;
+  margin-bottom: 5vh;
+}
+
+.ContentStanga {
+  position: relative;
+  width: 35vw;
+}
+
+.ContentDreapta {
+  position: relative;
+  width: 35vw;
+}
+.ContentStangaHeader {
+  width: 100%;
+  padding: 10px;
+  font-size: 2.2vh;
+  color: white;
+  background: #0b0c10;
+  font-weight: 800;
+}
+.ContentStangaFixed {
+  background: #1f2833;
+  width: 90%;
+  height: 100%;
+  overflow: hidden;
+}
+.ContentStangaLista {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.ContentDreaptaFixed {
+  position: relative;
+  height: 100%;
+  width: 90%;
+  overflow: hidden;
+  background: #1f2833;
+  margin-left: 10%;
+}
+.ContentDreaptaLista {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .Incepe {
@@ -164,13 +212,15 @@ body {
 }
 
 .Intrebare {
-  border-radius: 2vh 2vh 0 0;
-  background: rgb(19, 140, 140);
-  padding: 10px;
+  background: #45a29e;
+  padding: 10vh 3vh 0 3vh;
   width: 100%;
   color: white;
-  font-size: 3.5vh;
+  font-size: 5vh;
   display: flex;
+  font-weight: 700;
+  line-height: 200%;
+  text-align: center;
 }
 .Raspunsuri {
   font-size: 5vh;
@@ -188,37 +238,70 @@ body {
   flex-direction: row;
 }
 .RaspunsuriDaNu div {
-  padding: 20px;
-  width: 100%;
+  padding: 15px;
+  width: 40%;
   text-align: center;
-}
-.RaspunsuriDaNu div:hover {
-  background: rgb(130, 243, 0);
   color: white;
   cursor: pointer;
+  font-weight: 700;
+  border-radius: 10px;
+}
+.RaspunsuriDa:hover {
+  background: rgb(108, 202, 0);
+}
+.RaspunsuriDa {
+  background: rgb(130, 243, 0);
+  margin-left: 5%;
+}
+.RaspunsuriNu {
+  background: #f70002;
+  margin-left: 10%;
+}
+.RaspunsuriNu:hover {
+  background: hsl(0, 100%, 43%);
 }
 .RaspunsuriNuConteaza {
   padding: 20px;
-  width: 100%;
+  width: 90%;
   text-align: center;
+  background: #66fcf1;
+  color: white;
+  font-weight: 700;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 .RaspunsuriNuConteaza:hover {
-  background: rgb(130, 243, 0);
+  background: rgb(119, 119, 119);
   color: white;
   cursor: pointer;
 }
 .MeniuContainer {
   display: flex;
-  align-items: right;
+  justify-content: center;
   width: 100%;
+  height: 7vh;
   color: white;
-  background: rgb(158, 158, 158);
-  justify-content: flex-end;
-  border-radius: 0 0 2vh 2vh;
+  background: #0b0c10;
 }
 .MeniuContainer div {
+  position: relative;
   cursor: pointer;
-  margin: 1vh;
+  width: 7vh;
+  height: 7vh;
+  padding: 1vh;
+  transition: 0.5s;
+  margin: 0 15px 0 15px;
+}
+.MeniuContainer div:hover {
+  background: white;
+}
+.MeniuContainer img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 .TelefonFinal {
   position: relative;
@@ -271,39 +354,40 @@ body {
   cursor: pointer;
 }
 .notificare {
-  direction: ltr;
   position: relative;
-  width: 90%;
+  width: 95%;
   margin-top: 1vh;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
-  border-radius: 10px;
   font-size: 3vh;
+  font-weight: 600;
   color: white;
   padding: 10px;
+  padding-left: 20px;
+  border-radius: 0 5px 15px 0;
 }
 
-.ContentStanga::-webkit-scrollbar {
+.ContentStangaLista::-webkit-scrollbar {
   width: 1em;
 }
 
-.ContentStanga::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+.ContentStangaLista::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.ContentStanga::-webkit-scrollbar-thumb {
+.ContentStangaLista::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
-.ContentDreapta::-webkit-scrollbar {
+.ContentDreaptaLista::-webkit-scrollbar {
   width: 1em;
 }
 
-.ContentDreapta::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+.ContentDreaptaLista::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.ContentDreapta::-webkit-scrollbar-thumb {
+.ContentDreaptaLista::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
