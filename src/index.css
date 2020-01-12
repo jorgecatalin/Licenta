@@ -148,6 +148,7 @@ body {
 
 .ContentStanga {
   position: relative;
+  height: 100%;
   width: 35vw;
 }
 
@@ -155,25 +156,27 @@ body {
   position: relative;
   width: 35vw;
 }
-.ContentStangaHeader {
-  width: 100%;
-  padding: 10px;
-  font-size: 2.2vh;
-  color: white;
-  background: #0b0c10;
-  font-weight: 800;
-}
 .ContentStangaFixed {
+  position: relative;
   background: #1f2833;
   width: 90%;
   height: 100%;
   overflow: hidden;
   box-shadow: 5px 0 10px -5px #333;
 }
-.ContentStangaLista {
-  position: relative;
+.ContentStangaHeader {
   width: 100%;
-  height: 100%;
+  padding: 10px;
+  height: 6vh;
+  font-size: 2.2vh;
+  color: white;
+  background: #0b0c10;
+  font-weight: 800;
+  box-shadow: 0 5px 5px -5px black;
+}
+.ContentStangaLista {
+  height: 87vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -190,7 +193,7 @@ body {
 }
 .ContentDreaptaLista {
   width: 100%;
-  height: 100%;
+  height: 87vh;
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
@@ -380,6 +383,15 @@ body {
   padding: 10px;
   padding-left: 20px;
   border-radius: 0 5px 15px 0;
+  box-shadow: 0 5px 5px -5px black;
+  cursor: pointer;
+}
+.notificare div {
+  cursor: pointer;
+}
+.notificare:hover {
+  width: 98%;
+  padding-right: 10%;
 }
 
 .ContentStangaLista::-webkit-scrollbar {
@@ -406,33 +418,23 @@ body {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
-@media screen and (max-width: 800px) {
-  .Container {
-    min-width: 100%;
-    max-width: 100%;
-    margin: 0 !important;
-    border-style: none;
+@media screen and (max-width: 1000px) {
+  .ContentStanga {
+    margin-left: -35vw;
+    transition: 0.5s;
+  }
+  .ContentDreapta {
+    margin-right: -35vw;
+    transition: 0.5s;
+  }
+  .Content {
+    margin: 0 4vw 4vh 4vw;
+    width: 100vw !important;
+    transition: 0.5s;
+  }
+  .TelefonFinal {
+    margin: 0 2vw 4vh 2vw;
     width: 100%;
-    min-width: 0;
-    height: 100vh;
-    border-radius: 0;
-  }
-  .Container div {
-    border-radius: 0;
-  }
-  .Raspunsuri {
-    margin-bottom: 5vh;
-  }
-  .RaspunsuriDaNu div:hover {
-    background-color: white !important;
-    color: gray;
-  }
-  .RaspunsuriNuConteaza:hover {
-    background-color: white !important;
-    color: gray;
-  }
-  .MeniuContainer {
-    position: absolute;
-    bottom: 0;
+    margin-left: auto;
   }
 }

@@ -250,6 +250,11 @@ class Content extends React.Component {
       arataFinal: 1,
       i: this.state.i + 1
     })
+
+    notificareIntrebare.push({
+      text: intrebariPuse[this.state.i].textIntrebare,
+      culoare: "gray"
+    })
     console.log(intrebariCareNuMergPuse)
   }
 
@@ -267,12 +272,10 @@ class Content extends React.Component {
     }
 
     //sterg ultima notificare
-    if (!this.state.arataFinal) {
-      notificareIntrebare.pop()
-      this.setState({
-        notificariIntrebare: [...notificareIntrebare]
-      })
-    }
+    notificareIntrebare.pop()
+    this.setState({
+      notificariIntrebare: [...notificareIntrebare]
+    })
     this.setState({
       i: this.state.i - 1,
       arataFinal: 0
