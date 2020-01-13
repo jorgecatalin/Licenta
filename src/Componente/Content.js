@@ -6,6 +6,7 @@ import Intrebari from "./Intrebari.js"
 import TelefonFinal from "./TelefonFinal.js"
 import TelefoaneAfisaj from "./TelefoaneAfisaj.js"
 import NotificareIntrebari from "./NotificareIntrebari.js"
+import ViewerPoza from "./ViewerPoza.js"
 import { useSpring, animated } from "react-spring"
 import { thisTypeAnnotation } from "@babel/types"
 
@@ -29,6 +30,11 @@ const nrIntrebari = intrebari.length
 
 let notificareIntrebare = []
 
+let viewPoza = {
+  img: "",
+  nume: ""
+}
+
 class Content extends React.Component {
   constructor(props) {
     super(props)
@@ -37,25 +43,42 @@ class Content extends React.Component {
     this.start = this.start.bind(this)
     this.inapoi = this.inapoi.bind(this)
     this.arataTelefonFinal = this.arataTelefonFinal.bind(this)
+    this.showPoza = this.showPoza.bind(this)
+    this.changePoza = this.changePoza.bind(this)
+    this.inapoiX = this.inapoiX.bind(this)
     this.state = {
       i: 0,
       raspunsCurent: 4,
       arataFinal: 0,
       telefoaneRamaseState: [...telefoaneRamase],
-      notificariIntrebare: []
+      notificariIntrebare: [],
+      showPoza: 0
     }
   }
   render() {
     if (this.state.arataFinal === 0) {
       return (
         <div class="ContainerTot">
+          {this.state.showPoza ? (
+            <ViewerPoza
+              date={{
+                img: viewPoza.img,
+                nume: viewPoza.nume,
+                inchide: this.showPoza
+              }}
+            ></ViewerPoza>
+          ) : (
+            ""
+          )}
           <div class="ContainerContent">
             <div class="ContentStanga" id="ContentStanga">
               <div class="ContentStangaFixed">
                 <div class="ContentStangaHeader">Istoric intrebari</div>
                 <div class="ContentStangaLista">
                   {this.state.notificariIntrebare.map(item => (
-                    <NotificareIntrebari date={item} />
+                    <NotificareIntrebari
+                      date={{ item: item, inapoiX: this.inapoiX }}
+                    />
                   ))}
                 </div>
               </div>
@@ -75,7 +98,13 @@ class Content extends React.Component {
                 <div class="ContentStangaHeader">Telefoane posibile</div>
                 <div class="ContentDreaptaLista">
                   {this.state.telefoaneRamaseState.map(item => (
-                    <TelefoaneAfisaj date={item} />
+                    <TelefoaneAfisaj
+                      date={{
+                        item: item,
+                        changePoza: this.changePoza,
+                        showPoza: this.showPoza
+                      }}
+                    />
                   ))}
                 </div>
               </div>
@@ -115,6 +144,21 @@ class Content extends React.Component {
     }
   }
 
+  changePoza(img, nume) {
+    console.log("CHANGE POZA", img, nume)
+    viewPoza.img = img
+    viewPoza.nume = nume
+  }
+  showPoza() {
+    if (this.state.showPoza)
+      this.setState({
+        showPoza: 0
+      })
+    else
+      this.setState({
+        showPoza: 1
+      })
+  }
   executaFunctii() {
     this.setState({
       telefoaneRamaseState: [...telefoaneRamase]
@@ -156,17 +200,20 @@ class Content extends React.Component {
     if (_raspuns === 1)
       notificareIntrebare.push({
         text: intrebariPuse[this.state.i].textIntrebare,
-        culoare: "rgb(130, 243, 0)"
+        culoare: "rgb(130, 243, 0)",
+        i: this.state.i
       })
     else if (_raspuns === 2)
       notificareIntrebare.push({
         text: intrebariPuse[this.state.i].textIntrebare,
-        culoare: "#f70002"
+        culoare: "#f70002",
+        i: this.state.i
       })
     else
       notificareIntrebare.push({
         text: intrebariPuse[this.state.i].textIntrebare,
-        culoare: "gray"
+        culoare: "gray",
+        i: this.state.i
       })
     this.setState({
       notificariIntrebare: [...notificareIntrebare]
@@ -271,6 +318,7 @@ class Content extends React.Component {
       intrebariPuse.pop()
     }
 
+    console.log("status I INAINTE ", this.state.i)
     //sterg ultima notificare
     notificareIntrebare.pop()
     this.setState({
@@ -280,7 +328,28 @@ class Content extends React.Component {
       i: this.state.i - 1,
       arataFinal: 0
     })
+    console.log("status I ", this.state.i)
+    this.executaFunctii()
+  }
 
+  inapoiX(x) {
+    let k = this.state.i - x
+    intrebariRamase.concat(intrebariCareNuMergPuse)
+
+    for (let n = 0; n < k; n++) {
+      telefoaneRamase = [...telefoaneInapoi[this.state.i - 1 - n]]
+      intrebariRamase.push(intrebariPuse[this.state.i - n])
+      intrebariPuse.pop()
+      notificareIntrebare.pop()
+    }
+    this.setState({
+      notificariIntrebare: [...notificareIntrebare]
+    })
+
+    this.setState({
+      i: this.state.i - k,
+      arataFinal: 0
+    })
     this.executaFunctii()
   }
 }

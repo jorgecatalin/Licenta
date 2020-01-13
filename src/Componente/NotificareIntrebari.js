@@ -7,10 +7,11 @@ class NotificareIntrebari extends React.Component {
   render() {
     return (
       <div
-        style={{ background: this.props.date.culoare }}
+        style={{ background: this.props.date.item.culoare }}
         className="notificare"
+        onClick={() => this.props.date.inapoiX(this.props.date.item.i)}
       >
-        <div>{this.props.date.text}</div>
+        <div>{this.props.date.item.text}</div>
       </div>
     )
   }
