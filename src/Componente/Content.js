@@ -55,6 +55,12 @@ class Content extends React.Component {
       showPoza: 0
     }
   }
+
+  componentDidMount() {
+    let w = window.innerWidth
+    document.getElementById("Content").scrollIntoView()
+    console.log("a MONTAT", w)
+  }
   render() {
     if (this.state.arataFinal === 0) {
       return (
@@ -70,7 +76,7 @@ class Content extends React.Component {
           ) : (
             ""
           )}
-          <div class="ContainerContent">
+          <div class="ContainerContent" id="ContainerContent">
             <div class="ContentStanga" id="ContentStanga">
               <div class="ContentStangaFixed">
                 <div class="ContentStangaHeader">Istoric intrebari</div>
