@@ -4,6 +4,7 @@ class Meniu extends React.Component {
   constructor(props) {
     super(props)
   }
+
   render() {
     //trebuie ca macar o obtiune sa fie aleasa pentru a arata butonul Termina
 

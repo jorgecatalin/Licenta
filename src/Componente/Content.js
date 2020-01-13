@@ -50,7 +50,7 @@ class Content extends React.Component {
       return (
         <div class="ContainerTot">
           <div class="ContainerContent">
-            <div class="ContentStanga">
+            <div class="ContentStanga" id="ContentStanga">
               <div class="ContentStangaFixed">
                 <div class="ContentStangaHeader">Istoric intrebari</div>
                 <div class="ContentStangaLista">
@@ -60,7 +60,7 @@ class Content extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="Content" from={{ opacity: 0 }} to={{ opacity: 1 }}>
+            <div className="Content" id="Content">
               <Intrebare text={intrebariPuse[this.state.i].textIntrebare} />
               <Raspunsuri
                 date={{
@@ -70,7 +70,7 @@ class Content extends React.Component {
                 }}
               />
             </div>
-            <div class="ContentDreapta">
+            <div class="ContentDreapta" id="ContentDreapta">
               <div class="ContentDreaptaFixed">
                 <div class="ContentStangaHeader">Telefoane posibile</div>
                 <div class="ContentDreaptaLista">

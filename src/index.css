@@ -418,23 +418,51 @@ body {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+
+.responsiveArataContainerStanga,
+.responsiveArataContainerDreapta {
+  display: none;
+}
 @media screen and (max-width: 1000px) {
+  .ContainerContent {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-coordinate: 0 0;
+    scroll-snap-points-x: repeat(100%);
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    justify-content: none;
+  }
   .ContentStanga {
-    margin-left: -35vw;
+    width: 100vw;
     transition: 0.5s;
+    scroll-snap-align: start;
+    flex: 0 0 100vw;
   }
   .ContentDreapta {
-    margin-right: -35vw;
+    width: 100vw;
+    flex: 0 0 100vw;
     transition: 0.5s;
+    scroll-snap-align: start;
   }
   .Content {
-    margin: 0 4vw 4vh 4vw;
-    width: 100vw !important;
+    width: 100vw;
+    flex: 0 0 100vw;
     transition: 0.5s;
+    scroll-snap-align: start;
   }
   .TelefonFinal {
     margin: 0 2vw 4vh 2vw;
     width: 100%;
     margin-left: auto;
+  }
+
+  .MeniuContainer div {
+    margin: 0 5px 0 5px;
+  }
+  .responsiveArataContainerStanga,
+  .responsiveArataContainerDreapta {
+    display: block;
   }
 }
